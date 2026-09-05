@@ -1,0 +1,45 @@
+[
+  {
+    "id": "lab_apex",
+    "name": "Apex Diagnostics",
+    "area": "Sector 15, Faridabad",
+    "rating": 4.3,
+    "tests": {
+      "cbc": {"name": "Complete Blood Count (CBC)", "price": 350},
+      "vitamin_d": {"name": "Vitamin D Test", "price": 1200},
+      "thyroid": {"name": "Thyroid Profile (T3 T4 TSH)", "price": 600},
+      "lipid": {"name": "Lipid Profile", "price": 500},
+      "blood_sugar": {"name": "Fasting Blood Sugar", "price": 150}
+    },
+    "slots_today": ["10:00 AM", "2:00 PM", "5:30 PM"],
+    "home_collection": true
+  },
+  {
+    "id": "lab_citycare",
+    "name": "CityCare Labs",
+    "area": "NIT, Faridabad",
+    "rating": 4.0,
+    "tests": {
+      "cbc": {"name": "Complete Blood Count (CBC)", "price": 300},
+      "vitamin_d": {"name": "Vitamin D Test", "price": 999},
+      "thyroid": {"name": "Thyroid Profile (T3 T4 TSH)", "price": 549},
+      "blood_sugar": {"name": "Fasting Blood Sugar", "price": 120}
+    },
+    "slots_today": [],
+    "home_collection": true
+  },
+  {
+    "id": "lab_wellmed",
+    "name": "WellMed Path Labs",
+    "area": "Sector 21, Faridabad",
+    "rating": 4.6,
+    "tests": {
+      "cbc": {"name": "Complete Blood Count (CBC)", "price": 400},
+      "vitamin_d": {"name": "Vitamin D Test", "price": 1100},
+      "lipid": {"name": "Lipid Profile", "price": 550},
+      "thyroid": {"name": "Thyroid Profile (T3 T4 TSH)", "price": 650}
+    },
+    "slots_today": ["9:00 AM", "1:00 PM"],
+    "home_collection": false
+  }
+]
