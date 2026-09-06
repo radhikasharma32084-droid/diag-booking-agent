@@ -15,7 +15,7 @@ import os
 import json
 import re
 
-# Known tests the agent understands. Keys must match mock_labs.json test keys.
+# Known individual tests. Keys must match mock_labs.json test keys.
 KNOWN_TESTS = {
     "cbc": ["cbc", "complete blood count", "blood count"],
     "vitamin_d": ["vitamin d", "vit d", "vitamin-d"],
@@ -33,9 +33,39 @@ KNOWN_TESTS = {
     "iron": ["iron test", "iron studies", "ferritin"],
 }
 
+# Bundled "checkup" packages — for patients who don't know individual test
+# names and just want a general wellness screen. Each maps to a fixed set of
+# individual tests, so the deterministic matcher/booking logic downstream
+# never has to change — a package is just a shortcut for picking several
+# known tests at once.
+CHECKUP_PACKAGES = {
+    "full_body": {
+        "aliases": [
+            "full body checkup", "full body check up", "full body", "fullbody",
+            "general checkup", "general check up", "health checkup",
+            "health check up", "routine checkup", "master health checkup",
+            "complete checkup", "complete body checkup", "basic checkup",
+            "wellness checkup", "annual checkup",
+        ],
+        "tests": ["cbc", "blood_sugar", "lipid", "lft", "kft", "thyroid", "hemoglobin"],
+    },
+    "diabetes": {
+        "aliases": ["diabetes checkup", "diabetes package", "diabetic checkup", "sugar checkup"],
+        "tests": ["blood_sugar", "hba1c"],
+    },
+}
+
 
 def _keyword_fallback(message: str):
     message = message.lower()
+
+    # Check checkup packages first — a package match takes priority over
+    # individual test aliases, since "full body checkup" would otherwise
+    # match nothing (no single test is literally called that).
+    for package in CHECKUP_PACKAGES.values():
+        if any(alias in message for alias in package["aliases"]):
+            return package["tests"]
+
     found = []
     for test_key, aliases in KNOWN_TESTS.items():
         if any(alias in message for alias in aliases):
@@ -59,10 +89,16 @@ def extract_requested_tests(message: str):
 
         client = anthropic.Anthropic(api_key=api_key)
         known_list = ", ".join(KNOWN_TESTS.keys())
+        packages_note = (
+            "If the user asks for a general 'full body checkup' or 'health "
+            "checkup' rather than naming specific tests, return this bundle: "
+            "cbc, blood_sugar, lipid, lft, kft, thyroid, hemoglobin."
+        )
         prompt = (
             f"The user wants to book diagnostic lab tests. Known test codes: "
-            f"{known_list}. From this message, return ONLY a JSON array of the "
-            f"matching test codes, nothing else. Message: \"{message}\""
+            f"{known_list}. {packages_note} From this message, return ONLY a "
+            f"JSON array of the matching test codes, nothing else. "
+            f"Message: \"{message}\""
         )
         response = client.messages.create(
             model="claude-sonnet-4-6",
