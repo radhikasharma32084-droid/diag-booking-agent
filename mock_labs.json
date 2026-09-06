@@ -7,9 +7,18 @@
     "tests": {
       "cbc": {"name": "Complete Blood Count (CBC)", "price": 350},
       "vitamin_d": {"name": "Vitamin D Test", "price": 1200},
+      "vitamin_b12": {"name": "Vitamin B12 Test", "price": 900},
       "thyroid": {"name": "Thyroid Profile (T3 T4 TSH)", "price": 600},
       "lipid": {"name": "Lipid Profile", "price": 500},
-      "blood_sugar": {"name": "Fasting Blood Sugar", "price": 150}
+      "blood_sugar": {"name": "Fasting Blood Sugar", "price": 150},
+      "hba1c": {"name": "HbA1c (Diabetes Average)", "price": 450},
+      "lft": {"name": "Liver Function Test", "price": 700},
+      "kft": {"name": "Kidney Function Test", "price": 650},
+      "hemoglobin": {"name": "Hemoglobin Test", "price": 120},
+      "urine_routine": {"name": "Urine Routine Test", "price": 200},
+      "calcium": {"name": "Calcium Test", "price": 250},
+      "uric_acid": {"name": "Uric Acid Test", "price": 220},
+      "iron": {"name": "Iron Studies", "price": 550}
     },
     "slots_today": ["10:00 AM", "2:00 PM", "5:30 PM"],
     "home_collection": true
@@ -23,7 +32,13 @@
       "cbc": {"name": "Complete Blood Count (CBC)", "price": 300},
       "vitamin_d": {"name": "Vitamin D Test", "price": 999},
       "thyroid": {"name": "Thyroid Profile (T3 T4 TSH)", "price": 549},
-      "blood_sugar": {"name": "Fasting Blood Sugar", "price": 120}
+      "blood_sugar": {"name": "Fasting Blood Sugar", "price": 120},
+      "hba1c": {"name": "HbA1c (Diabetes Average)", "price": 399},
+      "lft": {"name": "Liver Function Test", "price": 649},
+      "kft": {"name": "Kidney Function Test", "price": 599},
+      "hemoglobin": {"name": "Hemoglobin Test", "price": 99},
+      "urine_routine": {"name": "Urine Routine Test", "price": 180},
+      "uric_acid": {"name": "Uric Acid Test", "price": 199}
     },
     "slots_today": [],
     "home_collection": true
@@ -36,8 +51,15 @@
     "tests": {
       "cbc": {"name": "Complete Blood Count (CBC)", "price": 400},
       "vitamin_d": {"name": "Vitamin D Test", "price": 1100},
+      "vitamin_b12": {"name": "Vitamin B12 Test", "price": 850},
       "lipid": {"name": "Lipid Profile", "price": 550},
-      "thyroid": {"name": "Thyroid Profile (T3 T4 TSH)", "price": 650}
+      "thyroid": {"name": "Thyroid Profile (T3 T4 TSH)", "price": 650},
+      "hba1c": {"name": "HbA1c (Diabetes Average)", "price": 480},
+      "lft": {"name": "Liver Function Test", "price": 720},
+      "kft": {"name": "Kidney Function Test", "price": 680},
+      "hemoglobin": {"name": "Hemoglobin Test", "price": 140},
+      "calcium": {"name": "Calcium Test", "price": 270},
+      "iron": {"name": "Iron Studies", "price": 590}
     },
     "slots_today": ["9:00 AM", "1:00 PM"],
     "home_collection": false
