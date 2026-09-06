@@ -6,10 +6,21 @@
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <div class="app">
+
+  <div id="intro" class="intro">
+    <div class="intro-badge">🩺</div>
+    <h1>Diagnostic Test<br>Booking Agent</h1>
+    <p>Compare lab prices near you and book instantly — powered by AI, kept honest by plain code.</p>
+    <button id="start-btn" class="pill-btn">Get started</button>
+  </div>
+
+  <div id="app" class="app" style="display:none;">
     <header>
-      <h1>🩺 Diagnostic Test Booking Agent</h1>
-      <p>Tell me what test you need — I'll compare labs near you and book the best one.</p>
+      <div class="header-badge">🩺</div>
+      <div>
+        <h1>Diagnostic Test Booking Agent</h1>
+        <p>Tell me what test you need — I'll compare labs near you and book the best one.</p>
+      </div>
     </header>
 
     <div id="chat" class="chat"></div>
