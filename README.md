@@ -4,7 +4,7 @@
 
 ## The problem
 
-Diagnostic lab pricing in India is fragmented and undiscoverable. The same
+Diagnostic lab pricing in India is fragmented and undiscoverable. For example the same
 CBC test can cost ₹300 at one lab and ₹550 at another two streets away, and
 there is no easy way for a patient to compare and book in one step. This
 also means labs lose walk-in revenue to whichever competitor the patient
