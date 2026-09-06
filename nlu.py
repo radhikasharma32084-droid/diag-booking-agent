@@ -19,9 +19,18 @@ import re
 KNOWN_TESTS = {
     "cbc": ["cbc", "complete blood count", "blood count"],
     "vitamin_d": ["vitamin d", "vit d", "vitamin-d"],
+    "vitamin_b12": ["vitamin b12", "vit b12", "b12"],
     "thyroid": ["thyroid", "t3", "t4", "tsh"],
     "lipid": ["lipid", "cholesterol"],
-    "blood_sugar": ["sugar", "glucose", "diabetes test", "blood sugar"],
+    "blood_sugar": ["fasting sugar", "fasting glucose", "fasting blood sugar", "fbs", "sugar test", "sugar", "glucose", "diabetes test"],
+    "hba1c": ["hba1c", "hb a1c", "diabetes average", "a1c"],
+    "lft": ["lft", "liver function", "liver test"],
+    "kft": ["kft", "kidney function", "kidney test", "renal function"],
+    "hemoglobin": ["hemoglobin", "haemoglobin", "hb test"],
+    "urine_routine": ["urine test", "urine routine", "urinalysis"],
+    "calcium": ["calcium"],
+    "uric_acid": ["uric acid", "gout test"],
+    "iron": ["iron test", "iron studies", "ferritin"],
 }
 
 
