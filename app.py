@@ -63,6 +63,14 @@ def ask():
             "audit_trail": result["audit_trail"],
             "awaiting_confirmation": True,
             "done": False,
+            "lab_card": {
+                "name": lab["name"],
+                "area": lab["area"],
+                "rating": lab["rating"],
+                "price": result["total_price"],
+                "tests": test_names,
+                "fallback_used": result["fallback_used"],
+            },
         }
     )
 
