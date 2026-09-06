@@ -6,7 +6,6 @@ from razorpay_client import create_order
 
 app = Flask(__name__)
 
-# Very small in-memory "session" for this demo (fine for a single-user pitch demo)
 LAST_PROPOSAL = {}
 
 
@@ -25,8 +24,10 @@ def ask():
         return jsonify(
             {
                 "reply": (
-                    "I couldn't recognise a test in that. Try something like "
-                    "\"I need a CBC and Vitamin D test\"."
+                    "I didn't catch a specific test in that. You can name a "
+                    "test directly (e.g. \"CBC\", \"thyroid\", \"sugar test\"), "
+                    "or just say \"full body checkup\" if you're not sure — "
+                    "I'll pick a standard set of common tests for you."
                 ),
                 "done": False,
             }
@@ -99,7 +100,6 @@ def confirm():
 
 
 def KNOWN_TESTS_DISPLAY(test_key):
-    # Small helper just for friendly display names in the reply text.
     from mock_labs_helper import test_display_name
 
     return test_display_name(test_key)
